@@ -130,16 +130,36 @@ header a:hover {
 #boxes .box img {
     width: 100px;
 }
-/*footer*/
-/*footer {
-    padding: 20px;
-    background-color: #e8491d;
-    text-align: center;
-    color: #ffffff;
-    font-weight: bold;
-    letter-spacing: .3em;
+/*sidebar*/
+aside#sidebar {
+    float: right;
+    margin-top: 20px;
+    width: 30%; 
 }
-*/
+aside#sidebar h3 {
+    padding-bottom: 15px;
+    font-weight: bold;
+    text-align: center;
+}
+aside#sidebar p {
+    background-color: #35424a;
+    padding: 20px;
+    color: #ffffff;
+}
+/*main-col*/
+article#main-col {
+    float: left;
+    width: 65%;
+    margin-top: 20px;
+}
+article#main-col h1 {
+    padding-bottom: 15px;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
 footer {
     margin-top: 30px;
     background-color: #e8491d;
