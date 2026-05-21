@@ -1,36 +1,40 @@
-import { Navbar } from '@/components/Navbar'
-import { ScrollProgress } from '@/components/ScrollProgress'
-import { BackToTop } from '@/components/BackToTop'
-import { Hero } from '@/components/sections/Hero'
-import { Services } from '@/components/sections/Services'
-import { Products } from '@/components/sections/Products'
-import { Portfolio } from '@/components/sections/Portfolio'
-import { Process } from '@/components/sections/Process'
-import { Pricing } from '@/components/sections/Pricing'
-import { Team } from '@/components/sections/Team'
-import { Testimonials } from '@/components/sections/Testimonials'
-import { FAQ } from '@/components/sections/FAQ'
-import { Contact } from '@/components/sections/Contact'
-import { Footer } from '@/components/sections/Footer'
+import { Navbar } from '@/components/navbar'
+import { Footer } from '@/components/footer'
+import { ScrollProgress } from '@/components/scroll-progress'
+import { BackToTop } from '@/components/back-to-top'
+import { HeroSection } from '@/components/sections/hero'
+import { AboutSection } from '@/components/sections/about'
+import { VisionMissionSection } from '@/components/sections/vision-mission'
+import { CoreValuesSection } from '@/components/sections/core-values'
+import { ServicesSection } from '@/components/sections/services'
+import { ProductsSection } from '@/components/sections/products'
+import { PortfolioSection } from '@/components/sections/portfolio'
+import { ProcessSection } from '@/components/sections/process'
+import { TeamSection } from '@/components/sections/team'
+import { TestimonialsSection } from '@/components/sections/testimonials'
+import { FAQSection } from '@/components/sections/faq'
+import { ContactSection } from '@/components/sections/contact'
 
 export default function Home() {
   return (
     <>
       <ScrollProgress />
       <Navbar />
-      <main className="overflow-hidden">
-        <Hero />
-        <Services />
-        <Products />
-        <Portfolio />
-        <Process />
-        <Pricing />
-        <Team />
-        <Testimonials />
-        <FAQ />
-        <Contact />
-        <Footer />
+      <main className="min-h-screen">
+        <HeroSection />
+        <AboutSection />
+        <VisionMissionSection />
+        <CoreValuesSection />
+        <ServicesSection />
+        <ProductsSection />
+        <PortfolioSection />
+        <ProcessSection />
+        <TeamSection />
+        <TestimonialsSection />
+        <FAQSection />
+        <ContactSection />
       </main>
+      <Footer />
       <BackToTop />
     </>
   )
