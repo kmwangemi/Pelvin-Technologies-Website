@@ -9,9 +9,8 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: 'ChurchSync - Software Development Solutions',
+  title: 'Pelvin Technologies - Software Development Solutions',
   description: 'Transform your business with innovative software solutions. Expert development, proven results.',
-  generator: 'v0.app',
   icons: {
     icon: [
       {
@@ -37,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className="bg-background scroll-smooth">
+    <html lang="en" className="bg-background scroll-smooth" suppressHydrationWarning>
       <body className="font-sans antialiased">
         <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
           {children}

@@ -23,19 +23,19 @@ const contactInfo = [
   {
     icon: Mail,
     label: 'Email',
-    value: 'hello@churchsync.dev',
-    href: 'mailto:hello@churchsync.dev',
+    value: 'info@pelvin.com',
+    href: 'mailto:info@pelvin.com',
   },
   {
     icon: Phone,
     label: 'Phone',
-    value: '+1 (555) 123-4567',
-    href: 'tel:+15551234567',
+    value: '+254 103 905 745',
+    href: 'tel:+254103905745',
   },
   {
     icon: MapPin,
     label: 'Address',
-    value: 'San Francisco, CA',
+    value: '90 James Gichuru Road, Lavington, Nairobi',
     href: '#',
   },
 ]
@@ -105,7 +105,7 @@ export function ContactSection() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Contact info */}
+          {/* Contact info and map */}
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -188,7 +188,7 @@ export function ContactSection() {
                 <input
                   {...register('phone')}
                   type="tel"
-                  placeholder="+1 (555) 000-0000"
+                  placeholder="+254 102 705 645"
                   className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
                 />
               </div>
