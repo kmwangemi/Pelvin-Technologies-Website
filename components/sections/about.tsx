@@ -7,9 +7,9 @@ import { Badge } from "@/components/ui/badge";
 
 const stats = [
 	{ label: "Years Experience", value: "10+" },
-	{ label: "Projects Completed", value: "500+" },
-	{ label: "Team Members", value: "50+" },
-	{ label: "Happy Clients", value: "200+" },
+	{ label: "Projects Completed", value: "10+" },
+	{ label: "Team Members", value: "5+" },
+	{ label: "Happy Clients", value: "10+" },
 ];
 
 const highlights = [
@@ -47,7 +47,6 @@ export function AboutSection() {
 				<div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-30" />
 				<div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 rounded-full blur-3xl opacity-30" />
 			</div>
-
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<motion.div
@@ -69,7 +68,6 @@ export function AboutSection() {
 						through transformative technology solutions.
 					</p>
 				</motion.div>
-
 				{/* Main content with professional image and text */}
 				<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
 					{/* Professional image */}
@@ -81,7 +79,7 @@ export function AboutSection() {
 						className="flex items-center justify-center lg:justify-start"
 					>
 						<div className="relative w-full max-w-md">
-							<div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 blur-2xl rounded-2xl" />
+							<div className="absolute inset-0 bg-linear-to-r from-primary/20 to-secondary/20 blur-2xl rounded-2xl" />
 							<Image
 								src="/team-professional.jpg"
 								alt="PELVIN Technologies Team"
@@ -91,7 +89,6 @@ export function AboutSection() {
 							/>
 						</div>
 					</motion.div>
-
 					{/* Text content */}
 					<motion.div
 						initial={{ opacity: 0, x: 20 }}
@@ -112,7 +109,6 @@ export function AboutSection() {
 								exceptional results.
 							</p>
 						</div>
-
 						<div>
 							<h3 className="text-2xl font-bold text-foreground mb-3">
 								Our Approach
@@ -124,31 +120,29 @@ export function AboutSection() {
 								tangible value and competitive advantage.
 							</p>
 						</div>
-
 						<div>
 							<h3 className="text-2xl font-bold text-foreground mb-3">
 								Why Choose Us
 							</h3>
 							<ul className="space-y-2 text-muted-foreground">
 								<li className="flex items-start gap-3">
-									<span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+									<span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
 									<span>
 										Proven track record with industry-leading success rates
 									</span>
 								</li>
 								<li className="flex items-start gap-3">
-									<span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+									<span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
 									<span>State-of-the-art technology and methodologies</span>
 								</li>
 								<li className="flex items-start gap-3">
-									<span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 flex-shrink-0" />
+									<span className="inline-block w-1.5 h-1.5 rounded-full bg-primary mt-2 shrink-0" />
 									<span>Dedicated support throughout your project journey</span>
 								</li>
 							</ul>
 						</div>
 					</motion.div>
 				</div>
-
 				{/* Stats */}
 				<div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mb-20 py-12 border-y border-border/40">
 					{stats.map((stat, index) => (
@@ -169,7 +163,6 @@ export function AboutSection() {
 						</motion.div>
 					))}
 				</div>
-
 				{/* Highlights */}
 				<div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
 					{highlights.map((item, index) => {
@@ -183,7 +176,7 @@ export function AboutSection() {
 								viewport={{ once: true }}
 								className="group relative p-6 rounded-lg border border-border/40 bg-card hover:border-primary/50 transition-all duration-300 hover:shadow-lg"
 							>
-								<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+								<div className="absolute inset-0 bg-linear-to-br from-primary/5 to-secondary/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 								<div className="relative z-10">
 									<Icon className="w-10 h-10 text-primary mb-4 group-hover:scale-110 transition-transform duration-300" />
 									<h3 className="font-bold text-foreground mb-2">

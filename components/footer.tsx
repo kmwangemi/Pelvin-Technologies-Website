@@ -1,12 +1,10 @@
 "use client";
 
-import { Mail } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
 export function Footer() {
 	const currentYear = new Date().getFullYear();
-
 	return (
 		<footer className="border-t border-border/40 bg-card/50 backdrop-blur">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12">
@@ -28,7 +26,6 @@ export function Footer() {
 							solutions that drive business growth.
 						</p>
 					</div>
-
 					{/* Services */}
 					<div>
 						<h3 className="font-semibold mb-4">Services</h3>
@@ -67,7 +64,6 @@ export function Footer() {
 							</li>
 						</ul>
 					</div>
-
 					{/* Company Links */}
 					<div>
 						<h3 className="font-semibold mb-4">Company</h3>
@@ -106,7 +102,6 @@ export function Footer() {
 							</li>
 						</ul>
 					</div>
-
 					{/* Contact */}
 					<div>
 						<h3 className="font-semibold mb-4">Connect With Us</h3>
@@ -131,11 +126,11 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								href="https://twitter.com"
+								href="https://x.com"
 								target="_blank"
 								rel="noopener noreferrer"
 								className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
-								aria-label="Twitter"
+								aria-label="X"
 							>
 								<svg
 									role="img"
@@ -143,10 +138,10 @@ export function Footer() {
 									height="18"
 									viewBox="0 0 24 24"
 									fill="currentColor"
-									aria-labelledby="title-twitter"
+									aria-labelledby="title-x"
 								>
-									<title id="title-twitter">Twitter</title>
-									<path d="M23.953 4.57a10 10 0 002.856-3.915 9.964 9.964 0 01-2.824.856 4.482 4.482 0 00-7.674 3.078c0 .355.042.696.122 1.027A12.75 12.75 0 012.7 3.557a4.482 4.482 0 001.386 5.985 4.466 4.466 0 01-2.03-.556v.056a4.482 4.482 0 003.597 4.387 4.484 4.484 0 01-2.026.077 4.483 4.483 0 004.188 3.112a8.987 8.987 0 01-6.642 2.212 12.74 12.74 0 006.96 2.042c8.35 0 12.905-6.922 12.905-12.905 0-.196-.004-.392-.015-.586a9.236 9.236 0 002.269-2.365z" />
+									<title id="title-x">X</title>
+									<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
 								</svg>
 							</a>
 							<a
@@ -204,18 +199,10 @@ export function Footer() {
 									<circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
 								</svg>
 							</a>
-							<a
-								href="mailto:info@pelvin.com"
-								className="p-2 rounded-lg bg-muted hover:bg-primary hover:text-primary-foreground transition-colors"
-								aria-label="Email"
-							>
-								<Mail size={18} />
-							</a>
 						</div>
 						<p className="text-sm text-muted-foreground">info@pelvin.com</p>
 					</div>
 				</div>
-
 				{/* Divider */}
 				<div className="border-t border-border/40 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
 					<p className="text-sm text-muted-foreground">

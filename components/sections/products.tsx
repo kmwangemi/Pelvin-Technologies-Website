@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, CheckCircle } from "lucide-react";
+import { ArrowRight, CheckCircle, ExternalLink } from "lucide-react";
+import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
 const handleLearnMore = () => {
@@ -26,6 +27,7 @@ const products = [
 			"Financial Reporting",
 		],
 		highlighted: true,
+		link: "https://churchsyncpro.com",
 	},
 	{
 		name: "ChurchSync Connect",
@@ -40,6 +42,8 @@ const products = [
 			"Notification System",
 			"Mobile App Access",
 		],
+		highlighted: false,
+		link: "https://churchsyncconnect.com",
 	},
 ];
 
@@ -79,7 +83,6 @@ export function ProductsSection() {
 						Purpose-built solutions for modern organizations
 					</p>
 				</motion.div>
-
 				<motion.div
 					variants={containerVariants}
 					initial="hidden"
@@ -87,13 +90,13 @@ export function ProductsSection() {
 					viewport={{ once: true, margin: "-100px" }}
 					className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center"
 				>
-					{products.map((product, index) => (
+					{products.map((product) => (
 						<motion.div
-							key={index}
+							key={product.name}
 							variants={itemVariants}
 							className={`relative rounded-2xl border p-8 sm:p-10 transition-all duration-300 ${
 								product.highlighted
-									? "border-primary/50 bg-gradient-to-br from-primary/5 to-secondary/5 shadow-lg shadow-primary/20"
+									? "border-primary/50 bg-linear-to-br from-primary/5 to-secondary/5 shadow-lg shadow-primary/20"
 									: "border-border/40 bg-card/50 hover:border-border/60"
 							}`}
 						>
@@ -102,51 +105,72 @@ export function ProductsSection() {
 									Featured
 								</div>
 							)}
-
-							<div className="mb-6">
-								<h3 className="text-2xl sm:text-3xl font-bold mb-2">
-									{product.name}
-								</h3>
-								<p className="text-primary font-semibold text-sm">
-									{product.subtitle}
-								</p>
+							{/* Header with link */}
+							<div className="mb-6 flex items-start justify-between gap-4">
+								<div>
+									<h3 className="text-2xl sm:text-3xl font-bold mb-2">
+										{product.name}
+									</h3>
+									<p className="text-primary font-semibold text-sm">
+										{product.subtitle}
+									</p>
+								</div>
+								<Link
+									href={product.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="shrink-0 p-2 rounded-lg border border-border/40 hover:border-primary/50 hover:bg-primary/10 text-muted-foreground hover:text-primary transition-all"
+									aria-label={`Visit ${product.name}`}
+								>
+									<ExternalLink size={18} />
+								</Link>
 							</div>
-
 							<p className="text-muted-foreground mb-8">
 								{product.description}
 							</p>
-
 							<div className="space-y-3 mb-8">
 								{product.features.map((feature, idx) => (
 									<motion.div
-										key={idx}
+										key={feature}
 										initial={{ opacity: 0, x: -10 }}
 										whileInView={{ opacity: 1, x: 0 }}
 										transition={{ delay: idx * 0.05 }}
 										viewport={{ once: true }}
 										className="flex items-center gap-3"
 									>
-										<CheckCircle
-											size={20}
-											className="text-primary flex-shrink-0"
-										/>
+										<CheckCircle size={20} className="text-primary shrink-0" />
 										<span className="text-foreground">{feature}</span>
 									</motion.div>
 								))}
 							</div>
-
-							<Button
-								onClick={handleLearnMore}
-								className={`w-full cursor-pointer ${
-									product.highlighted
-										? "bg-primary hover:bg-primary/90 text-primary-foreground"
-										: "border border-primary text-primary hover:bg-primary/10"
-								}`}
-								variant={product.highlighted ? "default" : "outline"}
-							>
-								Learn More
-								<ArrowRight className="ml-2" size={18} />
-							</Button>
+							{/* Buttons row */}
+							<div className="flex gap-3">
+								<Button
+									onClick={handleLearnMore}
+									className={`flex-1 cursor-pointer ${
+										product.highlighted
+											? "bg-primary hover:bg-primary/90 text-primary-foreground"
+											: "border border-primary text-primary hover:bg-primary/10"
+									}`}
+									variant={product.highlighted ? "default" : "outline"}
+								>
+									Learn More
+									<ArrowRight className="ml-2" size={18} />
+								</Button>
+								<Link
+									href={product.link}
+									target="_blank"
+									rel="noopener noreferrer"
+									className={`flex items-center gap-2 px-4 py-2 rounded-lg border text-sm font-semibold transition-all cursor-pointer ${
+										product.highlighted
+											? "border-primary/50 text-primary hover:bg-primary/10"
+											: "border-border/40 text-muted-foreground hover:border-primary/50 hover:text-primary"
+									}`}
+								>
+									<ExternalLink size={16} />
+									Visit Site
+								</Link>
+							</div>
 						</motion.div>
 					))}
 				</motion.div>

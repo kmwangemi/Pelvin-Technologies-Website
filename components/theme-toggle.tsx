@@ -20,7 +20,7 @@ export function ThemeToggle() {
 			variant="outline"
 			size="sm"
 			onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-			className="relative w-10 h-10 rounded-lg"
+			className="relative w-10 h-10 cursor-pointer px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-accent/20 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
 		>
 			<Sun className="absolute h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
 			<Moon className="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />

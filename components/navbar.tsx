@@ -34,7 +34,7 @@ export function Navbar() {
 			initial={{ y: -100 }}
 			animate={{ y: 0 }}
 			transition={{ duration: 0.5 }}
-			className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur-xl supports-[backdrop-filter]:bg-background/60"
+			className="sticky top-0 z-50 border-b border-border/40 bg-background/95 backdrop-blur-xl supports-backdrop-filter:bg-background/60"
 		>
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				<div className="flex h-16 items-center justify-between">
@@ -42,7 +42,7 @@ export function Navbar() {
 					<Link
 						href="#hero"
 						onClick={handleNavClick}
-						className="flex items-center gap-2 flex-shrink-0 hover:opacity-80 transition-opacity"
+						className="flex items-center gap-2 shrink-0 hover:opacity-80 transition-opacity"
 					>
 						<Image
 							src="/logo.png"
@@ -54,7 +54,6 @@ export function Navbar() {
 							style={{ filter: "drop-shadow(0 2px 4px rgba(0,0,0,0.1))" }}
 						/>
 					</Link>
-
 					{/* Desktop Navigation */}
 					<div className="hidden md:flex items-center gap-1">
 						{navItems.map((item) => (
@@ -71,14 +70,13 @@ export function Navbar() {
 							</Link>
 						))}
 					</div>
-
 					{/* Right side actions */}
 					<div className="flex items-center gap-3">
 						<ThemeToggle />
 						<Button
 							variant="outline"
 							size="sm"
-							className="hidden sm:inline-flex"
+							className="hidden sm:inline-flex cursor-pointer px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 hover:bg-accent/20 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
 							onClick={() =>
 								document
 									.getElementById("contact")
@@ -87,7 +85,6 @@ export function Navbar() {
 						>
 							Get Started
 						</Button>
-
 						{/* Mobile menu button */}
 						<button
 							type="button"
@@ -98,7 +95,6 @@ export function Navbar() {
 						</button>
 					</div>
 				</div>
-
 				{/* Mobile Navigation */}
 				{mobileOpen && (
 					<motion.div
@@ -125,7 +121,7 @@ export function Navbar() {
 							<Button
 								variant="outline"
 								size="sm"
-								className="w-full mt-4"
+								className="w-full mt-4 cursor-pointer"
 								onClick={() => {
 									handleNavClick();
 									document

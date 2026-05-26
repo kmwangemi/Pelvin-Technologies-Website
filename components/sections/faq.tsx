@@ -8,12 +8,12 @@ const faqs = [
 	{
 		question: "What technologies do you specialize in?",
 		answer:
-			"We specialize in modern web and mobile technologies including React, Next.js, Node.js, TypeScript, and cloud platforms like AWS, Google Cloud, and Azure. We choose the best tools for each project.",
+			"We specialize in modern web and mobile technologies including React, React Native, Next.js, Node.js, TypeScript, Python, and cloud platforms like AWS, Google Cloud, and Azure. We also integrate cutting-edge AI and machine learning solutions using OpenAI, Claude, and other leading AI APIs to build intelligent, automated, and data-driven applications. We choose the best tools for each project.",
 	},
 	{
 		question: "What is your typical project timeline?",
 		answer:
-			"Project timelines vary based on complexity. Small projects typically take 4-8 weeks, while larger applications may take 3-6 months. We provide detailed timelines after the discovery phase.",
+			"Project timelines vary based on complexity. Small projects typically take 4-8 weeks, while larger applications may take 3-4 months. We provide detailed timelines after the discovery phase.",
 	},
 	{
 		question: "Do you provide ongoing support and maintenance?",
@@ -23,7 +23,7 @@ const faqs = [
 	{
 		question: "How do you handle project communication?",
 		answer:
-			"We maintain regular communication through weekly meetings, daily standup summaries, and a dedicated project manager. You&apos;ll have clear visibility into progress at all times.",
+			"We maintain regular communication through weekly meetings, daily standup summaries, and a dedicated project manager. You'll have clear visibility into progress at all times.",
 	},
 	{
 		question: "What is your development process?",
@@ -39,7 +39,6 @@ const faqs = [
 
 export function FAQSection() {
 	const [openIndex, setOpenIndex] = useState<number | null>(0);
-
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -50,7 +49,6 @@ export function FAQSection() {
 			},
 		},
 	};
-
 	const itemVariants = {
 		hidden: { opacity: 0, y: 10 },
 		visible: {
@@ -59,7 +57,6 @@ export function FAQSection() {
 			transition: { duration: 0.5 },
 		},
 	};
-
 	return (
 		<section id="faq" className="py-20 sm:py-32">
 			<div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
@@ -93,7 +90,7 @@ export function FAQSection() {
 							<button
 								type="button"
 								onClick={() => setOpenIndex(openIndex === index ? null : index)}
-								className="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/30 transition-colors"
+								className="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/30 transition-colors cursor-pointer"
 							>
 								<span className="text-left font-semibold text-lg">
 									{faq.question}
@@ -143,7 +140,7 @@ export function FAQSection() {
 								.getElementById("contact")
 								?.scrollIntoView({ behavior: "smooth" })
 						}
-						className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+						className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors cursor-pointer"
 					>
 						Contact Us
 					</button>

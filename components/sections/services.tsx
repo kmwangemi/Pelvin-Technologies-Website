@@ -78,7 +78,6 @@ export function ServicesSection() {
 						Comprehensive solutions tailored to your business needs
 					</p>
 				</motion.div>
-
 				<motion.div
 					variants={containerVariants}
 					initial="hidden"
@@ -96,8 +95,7 @@ export function ServicesSection() {
 								className="group relative rounded-2xl border border-border/40 bg-background p-8 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/20 transition-all duration-300"
 							>
 								{/* Gradient background on hover */}
-								<div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
+								<div className="absolute inset-0 rounded-2xl bg-linear-to-br from-primary/10 to-secondary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 								<div className="relative z-10">
 									<div className="inline-flex p-3 rounded-xl bg-primary/10 mb-4 group-hover:bg-primary/20 transition-colors duration-300">
 										<Icon className="w-6 h-6 text-primary" />
