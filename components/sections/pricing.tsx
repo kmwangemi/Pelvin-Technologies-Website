@@ -1,9 +1,9 @@
 'use client'
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { Button } from '@/components/ui/button'
+import { motion } from 'framer-motion'
 import { Check } from 'lucide-react'
+import { useState } from 'react'
 
 const plans = [
   {
@@ -92,10 +92,9 @@ export function PricingSection() {
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
             Flexible plans tailored to your budget and needs
           </p>
-
           {/* Billing toggle */}
           <div className="inline-flex items-center gap-4 p-1 rounded-lg bg-muted">
-            <button
+            <button type="button"
               onClick={() => setBillingPeriod('monthly')}
               className={`px-4 py-2 rounded-md transition-all ${
                 billingPeriod === 'monthly'
@@ -105,7 +104,7 @@ export function PricingSection() {
             >
               Monthly
             </button>
-            <button
+            <button type="button"
               onClick={() => setBillingPeriod('yearly')}
               className={`px-4 py-2 rounded-md transition-all ${
                 billingPeriod === 'yearly'
@@ -117,7 +116,6 @@ export function PricingSection() {
             </button>
           </div>
         </motion.div>
-
         {/* Pricing cards */}
         <motion.div
           variants={containerVariants}
@@ -132,7 +130,7 @@ export function PricingSection() {
               variants={itemVariants}
               className={`relative rounded-2xl border p-8 transition-all duration-300 ${
                 plan.highlighted
-                  ? 'border-primary/50 bg-gradient-to-br from-primary/5 to-secondary/5 shadow-lg shadow-primary/20 scale-105'
+                  ? 'border-primary/50 bg-linear-to-br from-primary/5 to-secondary/5 shadow-lg shadow-primary/20 scale-105'
                   : 'border-border/40 bg-background hover:border-border/60'
               }`}
             >
@@ -141,17 +139,14 @@ export function PricingSection() {
                   Most Popular
                 </div>
               )}
-
               <div className="mb-8">
                 <h3 className="text-2xl font-bold mb-2">{plan.name}</h3>
                 <p className="text-sm text-muted-foreground">{plan.description}</p>
               </div>
-
               <div className="mb-8">
                 <div className="text-4xl font-bold mb-2">{plan.price}</div>
                 <p className="text-sm text-muted-foreground">{plan.period}</p>
               </div>
-
               <Button
                 className={`w-full mb-8 ${
                   plan.highlighted
@@ -162,7 +157,6 @@ export function PricingSection() {
               >
                 Get Started
               </Button>
-
               <div className="space-y-4">
                 {plan.features.map((feature, idx) => (
                   <motion.div
@@ -173,7 +167,7 @@ export function PricingSection() {
                     viewport={{ once: true }}
                     className="flex items-start gap-3"
                   >
-                    <Check size={20} className="text-primary flex-shrink-0 mt-0.5" />
+                    <Check size={20} className="text-primary shrink-0 mt-0.5" />
                     <span className="text-sm text-foreground">{feature}</span>
                   </motion.div>
                 ))}
@@ -181,7 +175,6 @@ export function PricingSection() {
             </motion.div>
           ))}
         </motion.div>
-
         {/* FAQ CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -192,7 +185,7 @@ export function PricingSection() {
         >
           <p className="text-muted-foreground mb-4">
             Have questions about pricing? Check our{' '}
-            <button
+            <button type="button"
               onClick={() => document.getElementById('faq')?.scrollIntoView({ behavior: 'smooth' })}
               className="text-primary hover:underline font-semibold"
             >

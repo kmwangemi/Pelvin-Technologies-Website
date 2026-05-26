@@ -72,7 +72,6 @@ export function ProcessSection() {
             A proven methodology for delivering excellence at every stage
           </p>
         </motion.div>
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -84,17 +83,15 @@ export function ProcessSection() {
             <motion.div key={index} variants={itemVariants} className="relative">
               {/* Timeline line */}
               {index !== steps.length - 1 && (
-                <div className="absolute left-8 top-20 w-1 h-16 bg-gradient-to-b from-primary to-secondary hidden sm:block" />
+                <div className="absolute left-8 top-20 w-1 h-16 bg-linear-to-b from-primary to-secondary hidden sm:block" />
               )}
-
               <div className="flex gap-6">
                 {/* Step number */}
-                <div className="flex-shrink-0">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-2xl font-bold text-primary-foreground shadow-lg shadow-primary/30">
+                <div className="shrink-0">
+                  <div className="w-16 h-16 rounded-full bg-linear-to-br from-primary to-secondary flex items-center justify-center text-2xl font-bold text-primary-foreground shadow-lg shadow-primary/30">
                     {step.number}
                   </div>
                 </div>
-
                 {/* Content */}
                 <div className="flex-1 pt-2">
                   <h3 className="text-2xl font-bold mb-2">{step.title}</h3>
@@ -104,14 +101,13 @@ export function ProcessSection() {
             </motion.div>
           ))}
         </motion.div>
-
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true, margin: '-100px' }}
-          className="mt-16 p-8 sm:p-10 rounded-2xl border border-primary/30 bg-gradient-to-br from-primary/10 to-secondary/10 text-center"
+          className="mt-16 p-8 sm:p-10 rounded-2xl border border-primary/30 bg-linear-to-br from-primary/10 to-secondary/10 text-center"
         >
           <div className="flex items-center justify-center gap-2 mb-4">
             <CheckCircle2 size={24} className="text-primary" />
@@ -120,7 +116,7 @@ export function ProcessSection() {
           <p className="text-muted-foreground mb-6">
             Let&apos;s discuss your project and how we can help transform your vision into reality.
           </p>
-          <button
+          <button type="button"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
           >

@@ -1,8 +1,8 @@
 'use client'
 
-import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { ChevronDown } from 'lucide-react'
+import { useState } from 'react'
 
 const faqs = [
   {
@@ -75,7 +75,6 @@ export function FAQSection() {
             Everything you need to know about our services
           </p>
         </motion.div>
-
         <motion.div
           variants={containerVariants}
           initial="hidden"
@@ -89,7 +88,7 @@ export function FAQSection() {
               variants={itemVariants}
               className="rounded-xl border border-border/40 bg-background overflow-hidden hover:border-primary/50 transition-colors"
             >
-              <button
+              <button type="button"
                 onClick={() => setOpenIndex(openIndex === index ? null : index)}
                 className="w-full px-6 py-4 flex items-center justify-between hover:bg-muted/30 transition-colors"
               >
@@ -97,12 +96,11 @@ export function FAQSection() {
                 <motion.div
                   animate={{ rotate: openIndex === index ? 180 : 0 }}
                   transition={{ duration: 0.3 }}
-                  className="flex-shrink-0 ml-4"
+                  className="shrink-0 ml-4"
                 >
                   <ChevronDown size={24} className="text-primary" />
                 </motion.div>
               </button>
-
               {/* Answer */}
               <motion.div
                 initial={{ height: 0, opacity: 0 }}
@@ -120,7 +118,6 @@ export function FAQSection() {
             </motion.div>
           ))}
         </motion.div>
-
         {/* CTA */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -130,7 +127,7 @@ export function FAQSection() {
           className="text-center mt-16"
         >
           <p className="text-muted-foreground mb-4">Didn&apos;t find your answer?</p>
-          <button
+          <button type="button"
             onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
           >

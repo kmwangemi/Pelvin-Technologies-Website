@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-import { motion } from 'framer-motion'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import * as z from 'zod'
 import { Button } from '@/components/ui/button'
-import { Mail, Phone, MapPin, Send } from 'lucide-react'
+import { zodResolver } from '@hookform/resolvers/zod'
+import { motion } from 'framer-motion'
+import { Mail, MapPin, Phone, Send } from 'lucide-react'
+import { useState } from 'react'
+import { useForm } from 'react-hook-form'
 import { toast } from 'sonner'
+import * as z from 'zod'
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -61,7 +61,7 @@ export function ContactSection() {
       console.log('Form data:', data)
       toast.success('Message sent successfully! We&apos;ll be in touch soon.')
       reset()
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to send message. Please try again.')
     } finally {
       setIsSubmitting(false)

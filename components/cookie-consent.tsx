@@ -1,10 +1,10 @@
 'use client'
 
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
 import { Button } from '@/components/ui/button'
+import { AnimatePresence, motion } from 'framer-motion'
 import { X } from 'lucide-react'
-import { motion, AnimatePresence } from 'framer-motion'
+import Link from 'next/link'
+import { useEffect, useState } from 'react'
 
 export function CookieConsent() {
   const [isVisible, setIsVisible] = useState(false)
@@ -76,7 +76,7 @@ export function CookieConsent() {
                 >
                   Accept All
                 </Button>
-                <button
+                <button type="button"
                   onClick={() => setIsVisible(false)}
                   className="text-muted-foreground hover:text-foreground transition-colors"
                 >

@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
-import { useActiveSection } from '@/hooks/use-active-section'
 import { ThemeToggle } from '@/components/theme-toggle'
 import { Button } from '@/components/ui/button'
-import { Menu, X } from 'lucide-react'
+import { useActiveSection } from '@/hooks/use-active-section'
 import { motion } from 'framer-motion'
+import { Menu, X } from 'lucide-react'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
 
 const navItems = [
   { label: 'About', href: '#about' },
@@ -81,7 +81,7 @@ export function Navbar() {
             </Button>
 
             {/* Mobile menu button */}
-            <button
+            <button type="button"
               onClick={() => setMobileOpen(!mobileOpen)}
               className="md:hidden inline-flex items-center justify-center rounded-md p-2 text-foreground hover:bg-accent/20"
             >
