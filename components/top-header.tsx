@@ -25,7 +25,6 @@ export function TopHeader() {
 							<span>info@pelvin.com</span>
 						</Link>
 					</div>
-
 					{/* Right - Social Links */}
 					<div className="flex items-center gap-4">
 						<Link
@@ -48,11 +47,11 @@ export function TopHeader() {
 							</svg>
 						</Link>
 						<Link
-							href="https://twitter.com"
+							href="https://x.com"
 							target="_blank"
 							rel="noopener noreferrer"
 							className="text-muted-foreground hover:text-primary transition-colors"
-							aria-label="Twitter"
+							aria-label="X"
 						>
 							<svg
 								width="16"
@@ -60,10 +59,10 @@ export function TopHeader() {
 								viewBox="0 0 24 24"
 								fill="currentColor"
 								role="img"
-								aria-labelledby="twitterTitle"
+								aria-labelledby="xTitle"
 							>
-								<title id="twitterTitle">Twitter</title>
-								<path d="M23.953 4.57a10 10 0 002.856-3.915 9.964 9.964 0 01-2.824.856 4.482 4.482 0 00-7.674 3.078c0 .355.042.696.122 1.027A12.75 12.75 0 012.7 3.557a4.482 4.482 0 001.386 5.985 4.466 4.466 0 01-2.03-.556v.056a4.482 4.482 0 003.597 4.387 4.484 4.484 0 01-2.026.077 4.483 4.483 0 004.188 3.112 8.987 8.987 0 01-6.642 2.212 12.74 12.74 0 006.96 2.042c8.35 0 12.905-6.922 12.905-12.905 0-.196-.004-.392-.015-.586a9.236 9.236 0 002.269-2.365z" />
+								<title id="xTitle">X</title>
+								<path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
 							</svg>
 						</Link>
 						<Link
@@ -120,13 +119,6 @@ export function TopHeader() {
 								/>
 								<circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" />
 							</svg>
-						</Link>
-						<Link
-							href="mailto:info@pelvin.com"
-							className="text-muted-foreground hover:text-primary transition-colors"
-							aria-label="Email"
-						>
-							<Mail size={16} />
 						</Link>
 					</div>
 				</div>

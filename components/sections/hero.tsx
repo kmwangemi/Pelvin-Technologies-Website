@@ -25,10 +25,20 @@ export function HeroSection() {
 		},
 	};
 
+	const handleScrollToNext = () => {
+		const nextSection =
+			document.getElementById("services") ??
+			document.getElementById("about") ??
+			document.getElementById("products");
+		if (nextSection) {
+			nextSection.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
 	return (
 		<section
 			id="hero"
-			className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20"
+			className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-20"
 		>
 			{/* Animated background */}
 			<div className="absolute inset-0 -z-10">
@@ -36,7 +46,7 @@ export function HeroSection() {
 				<div className="absolute bottom-20 right-10 w-96 h-96 bg-secondary/20 rounded-full blur-3xl animate-pulse animation-delay-2000" />
 				<div className="absolute top-1/2 left-1/2 w-80 h-80 bg-accent/20 rounded-full blur-3xl animate-pulse animation-delay-4000" />
 			</div>
-
+			{/* Main content */}
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20 text-center">
 				<motion.div
 					variants={containerVariants}
@@ -53,7 +63,6 @@ export function HeroSection() {
 							</span>
 						</div>
 					</motion.div>
-
 					{/* Company Name */}
 					<motion.p
 						variants={itemVariants}
@@ -61,18 +70,16 @@ export function HeroSection() {
 					>
 						Welcome to PELVIN Technologies
 					</motion.p>
-
 					{/* Main heading */}
 					<motion.h1
 						variants={itemVariants}
 						className="text-5xl sm:text-6xl lg:text-7xl font-bold text-balance"
 					>
 						Transform Your Business with{" "}
-						<span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+						<span className="bg-linear-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
 							Innovative Solutions
 						</span>
 					</motion.h1>
-
 					{/* Subheading */}
 					<motion.p
 						variants={itemVariants}
@@ -82,7 +89,6 @@ export function HeroSection() {
 						deployment, PELVIN is your trusted technology partner for digital
 						transformation.
 					</motion.p>
-
 					{/* CTA Buttons */}
 					<motion.div
 						variants={itemVariants}
@@ -90,7 +96,7 @@ export function HeroSection() {
 					>
 						<Button
 							size="lg"
-							className="bg-primary hover:bg-primary/90 text-primary-foreground"
+							className="bg-primary hover:bg-primary/90 text-primary-foreground cursor-pointer"
 							onClick={() =>
 								document
 									.getElementById("contact")
@@ -103,6 +109,7 @@ export function HeroSection() {
 						<Button
 							size="lg"
 							variant="outline"
+							className="text-primary border-primary hover:bg-primary/10 cursor-pointer"
 							onClick={() =>
 								document
 									.getElementById("portfolio")
@@ -112,47 +119,46 @@ export function HeroSection() {
 							View Our Work
 						</Button>
 					</motion.div>
-
 					{/* Stats */}
 					<motion.div
 						variants={itemVariants}
 						className="grid grid-cols-3 gap-8 pt-12 max-w-md mx-auto"
 					>
 						<div>
-							<div className="text-3xl font-bold text-primary">50+</div>
+							<div className="text-3xl font-bold text-primary">10+</div>
 							<div className="text-sm text-muted-foreground">
 								Projects Delivered
 							</div>
 						</div>
 						<div>
-							<div className="text-3xl font-bold text-secondary">30+</div>
+							<div className="text-3xl font-bold text-secondary">10+</div>
 							<div className="text-sm text-muted-foreground">Happy Clients</div>
 						</div>
 						<div>
-							<div className="text-3xl font-bold text-accent">5+</div>
+							<div className="text-3xl font-bold text-accent">10+</div>
 							<div className="text-sm text-muted-foreground">
 								Years Experience
 							</div>
 						</div>
 					</motion.div>
 				</motion.div>
-
-				{/* Scroll indicator */}
-				<motion.div
-					animate={{ y: [0, 10, 0] }}
-					transition={{ duration: 2, repeat: Infinity }}
-					className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
-				>
-					<div className="flex flex-col items-center gap-2">
-						<span className="text-xs text-muted-foreground">
-							Scroll to explore
-						</span>
-						<div className="w-6 h-10 border-2 border-primary rounded-full flex items-center justify-center">
-							<div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
-						</div>
-					</div>
-				</motion.div>
 			</div>
+			{/* Scroll indicator — outside main content, pinned to bottom */}
+			<motion.button
+				type="button"
+				onClick={handleScrollToNext}
+				animate={{ y: [0, 10, 0] }}
+				transition={{ duration: 2, repeat: Infinity }}
+				className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer group"
+				aria-label="Scroll to next section"
+			>
+				<span className="text-xs text-muted-foreground group-hover:text-primary transition-colors">
+					Scroll to explore
+				</span>
+				<div className="w-6 h-10 border-2 border-primary rounded-full flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+					<div className="w-1 h-2 bg-primary rounded-full animate-bounce" />
+				</div>
+			</motion.button>
 		</section>
 	);
 }

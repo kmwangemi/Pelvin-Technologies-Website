@@ -42,7 +42,6 @@ const contactInfo = [
 
 export function ContactSection() {
 	const [isSubmitting, setIsSubmitting] = useState(false);
-
 	const {
 		register,
 		handleSubmit,
@@ -51,13 +50,11 @@ export function ContactSection() {
 	} = useForm<ContactFormData>({
 		resolver: zodResolver(contactSchema),
 	});
-
 	const onSubmit = async (data: ContactFormData) => {
 		setIsSubmitting(true);
 		try {
 			// Simulate API call
 			await new Promise((resolve) => setTimeout(resolve, 1000));
-
 			console.log("Form data:", data);
 			toast.success("Message sent successfully! We&apos;ll be in touch soon.");
 			reset();
@@ -67,7 +64,6 @@ export function ContactSection() {
 			setIsSubmitting(false);
 		}
 	};
-
 	const containerVariants = {
 		hidden: { opacity: 0 },
 		visible: {
@@ -78,7 +74,6 @@ export function ContactSection() {
 			},
 		},
 	};
-
 	const itemVariants = {
 		hidden: { opacity: 0, y: 20 },
 		visible: {
@@ -87,7 +82,6 @@ export function ContactSection() {
 			transition: { duration: 0.6 },
 		},
 	};
-
 	return (
 		<section id="contact" className="py-20 sm:py-32 bg-card/30 backdrop-blur">
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -104,7 +98,6 @@ export function ContactSection() {
 						your business
 					</p>
 				</motion.div>
-
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
 					{/* Contact info and map */}
 					<motion.div
@@ -133,11 +126,10 @@ export function ContactSection() {
 								</motion.a>
 							);
 						})}
-
 						{/* Availability */}
 						<motion.div
 							variants={itemVariants}
-							className="p-6 rounded-xl border border-primary/30 bg-gradient-to-br from-primary/10 to-secondary/10"
+							className="p-6 rounded-xl border border-primary/30 bg-linear-to-br from-primary/10 to-secondary/10"
 						>
 							<h3 className="font-semibold mb-2">Business Hours</h3>
 							<p className="text-sm text-muted-foreground">
@@ -146,7 +138,6 @@ export function ContactSection() {
 							</p>
 						</motion.div>
 					</motion.div>
-
 					{/* Contact form */}
 					<motion.form
 						initial={{ opacity: 0, y: 20 }}
@@ -172,7 +163,6 @@ export function ContactSection() {
 									</p>
 								)}
 							</div>
-
 							{/* Email */}
 							<div>
 								<label className="block text-sm font-semibold mb-2">
@@ -191,7 +181,6 @@ export function ContactSection() {
 								)}
 							</div>
 						</div>
-
 						<div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
 							{/* Phone */}
 							<div>
@@ -205,7 +194,6 @@ export function ContactSection() {
 									className="w-full px-4 py-3 rounded-lg border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
 								/>
 							</div>
-
 							{/* Company */}
 							<div>
 								<label className="block text-sm font-semibold mb-2">
@@ -219,7 +207,6 @@ export function ContactSection() {
 								/>
 							</div>
 						</div>
-
 						{/* Message */}
 						<div>
 							<label className="block text-sm font-semibold mb-2">
@@ -237,12 +224,11 @@ export function ContactSection() {
 								</p>
 							)}
 						</div>
-
 						{/* Submit button */}
 						<Button
 							type="submit"
 							disabled={isSubmitting}
-							className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold"
+							className="w-full bg-primary hover:bg-primary/90 text-primary-foreground font-semibold cursor-pointer"
 						>
 							{isSubmitting ? "Sending..." : "Send Message"}
 							<Send className="ml-2" size={18} />

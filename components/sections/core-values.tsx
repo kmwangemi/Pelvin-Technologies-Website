@@ -87,7 +87,6 @@ export function CoreValuesSection() {
 				<div className="absolute top-0 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl opacity-40" />
 				<div className="absolute bottom-0 left-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-40" />
 			</div>
-
 			<div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 				{/* Header */}
 				<motion.div
@@ -108,7 +107,6 @@ export function CoreValuesSection() {
 						culture
 					</p>
 				</motion.div>
-
 				{/* Values Grid */}
 				<motion.div
 					variants={containerVariants}
@@ -128,8 +126,7 @@ export function CoreValuesSection() {
 								{/* Card */}
 								<div className="relative h-full p-8 rounded-xl border border-border/40 bg-card hover:border-primary/50 transition-all duration-300 overflow-hidden">
 									{/* Gradient overlay on hover */}
-									<div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
+									<div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 									{/* Content */}
 									<div className="relative z-10 space-y-4">
 										{/* Icon */}
@@ -138,22 +135,18 @@ export function CoreValuesSection() {
 										>
 											<Icon className={`w-6 h-6 ${value.color}`} />
 										</div>
-
 										{/* Title */}
 										<h3 className="text-xl font-bold text-foreground">
 											{value.title}
 										</h3>
-
 										{/* Description */}
 										<p className="text-muted-foreground leading-relaxed text-sm">
 											{value.description}
 										</p>
-
 										{/* Accent line */}
-										<div className="h-1 w-0 bg-gradient-to-r from-primary to-secondary group-hover:w-12 transition-all duration-300 rounded-full" />
+										<div className="h-1 w-0 bg-linear-to-r from-primary to-secondary group-hover:w-12 transition-all duration-300 rounded-full" />
 									</div>
 								</div>
-
 								{/* Animated number in background */}
 								<div className="absolute -top-4 -right-4 text-6xl font-bold text-primary/5 group-hover:text-primary/10 transition-colors duration-300 pointer-events-none">
 									{String(index + 1).padStart(2, "0")}
@@ -162,14 +155,13 @@ export function CoreValuesSection() {
 						);
 					})}
 				</motion.div>
-
 				{/* Supporting statement */}
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					transition={{ duration: 0.5, delay: 0.3 }}
 					viewport={{ once: true }}
-					className="bg-gradient-to-r from-primary/10 to-secondary/10 rounded-xl p-8 sm:p-12 border border-border/40 text-center"
+					className="bg-linear-to-r from-primary/10 to-secondary/10 rounded-xl p-8 sm:p-12 border border-border/40 text-center"
 				>
 					<h3 className="text-2xl font-bold text-foreground mb-4">
 						Living Our Values

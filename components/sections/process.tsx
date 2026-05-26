@@ -136,7 +136,7 @@ export function ProcessSection() {
 								.getElementById("contact")
 								?.scrollIntoView({ behavior: "smooth" })
 						}
-						className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors"
+						className="inline-flex items-center gap-2 px-8 py-3 rounded-lg bg-primary text-primary-foreground font-semibold hover:bg-primary/90 transition-colors cursor-pointer"
 					>
 						Schedule a Consultation
 					</button>
